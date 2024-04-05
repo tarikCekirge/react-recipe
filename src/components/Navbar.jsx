@@ -5,9 +5,9 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <>
-      <nav className="bg-blue-700">
+      <nav className="bg-white dark:bg-gray-800">
         <div className="container mx-auto">
-          <div className="flex justify-between py-6">
+          <div className="flex justify-between items-center py-6">
             <Link className="text-white font-semibold hover:text-blue-200" to="/">
               Yemek Tarifleri
             </Link>

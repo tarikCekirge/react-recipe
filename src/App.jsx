@@ -16,11 +16,15 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/tarifler",
+        element: <Home />,
+      },
+      {
         path: "/create",
         element: <Create />,
       },
       {
-        path: "/details/:id",
+        path: "/tarifler/:id",
         element: <Details />,
       },
       {

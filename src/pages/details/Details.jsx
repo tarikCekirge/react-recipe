@@ -9,7 +9,6 @@ const Details = () => {
 
   useEffect(() => {
     fetchData(url);
-    console.log(data);
   }, [url]);
   return (
     <>

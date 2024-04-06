@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -11,7 +12,8 @@ const Navbar = () => {
             <Link className="text-white font-semibold hover:text-blue-200" to="/">
               Yemek Tarifleri
             </Link>
-            <div className="flex justify-end">
+            <div className="flex justify-end gap-2">
+              <SearchBar />
               <NavLink className="nav-link" to="/">
                 Home
               </NavLink>

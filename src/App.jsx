@@ -5,6 +5,7 @@ import Details from "./pages/details/Details";
 import Search from "./pages/search/Search";
 import Create from "./pages/create/Create";
 import MainLayout from "./layout/MainLayout";
+import ThemeSelector from "./components/ThemeSelector";
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +40,9 @@ function App() {
   return (
     <>
       <RouterProvider router={routes}></RouterProvider>
+      <div className="fixed right-3 bottom-3 z-10">
+        <ThemeSelector></ThemeSelector>
+      </div>
     </>
   );
 }

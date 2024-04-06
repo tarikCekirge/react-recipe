@@ -3,12 +3,11 @@ import { NavLink, Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import "./Navbar.css";
 import { ThemeContexts } from "../contexts/ThemeContexts";
-
 const Navbar = () => {
   const { color } = useContext(ThemeContexts);
   return (
     <>
-      <nav className={`${color}`}>
+      <nav style={{ backgroundColor: color }}>
         <div className="container mx-auto">
           <div className="flex justify-between items-center py-6">
             <Link className="text-white font-semibold hover:text-blue-200" to="/">

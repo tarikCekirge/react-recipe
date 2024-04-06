@@ -13,7 +13,7 @@ const SearchBar = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input name="search" id="search" type="search" onChange={(e) => setKeyword(e.target.value)} className="mt-0 block w-full px-2 border-2 border-gray-200 focus:ring-0 focus:border-black rounded-md" placeholder="Arama" />
+        <input name="search" id="search" type="search" onChange={(e) => setKeyword(e.target.value)} className="mt-0 block w-full px-2 border-2 h-full border-gray-200 focus:ring-0 focus:border-black rounded-md" placeholder="Arama" />
       </form>
     </>
   );

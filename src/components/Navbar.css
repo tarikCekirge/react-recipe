@@ -1,7 +1,9 @@
 .nav-link {
-    @apply text-white font-semibold hover:text-blue-200 px-6 py-2 rounded-md
+    color: initial;
+    @apply text-white font-semibold px-6 py-2 rounded-md
 }
 
 .nav-link.active {
-    @apply bg-white text-blue-500
+    color: inherit;
+    @apply bg-white;
 }

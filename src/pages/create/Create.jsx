@@ -1,11 +1,13 @@
 import React, { useState, useRef } from "react";
 import { IoMdRemove } from "react-icons/io";
 import { IoAddOutline } from "react-icons/io5";
+import useFetch from "../../hooks/useFetch";
 
 const Create = () => {
   const initialValue = { baslik: "", aciklama: "", malzemeler: [""], hazirlanisi: "", resim: "", url: "" };
   const [formData, setFormData] = useState(initialValue);
   const addButtonRef = useRef();
+  const { data, loading, error, fetchData } = useFetch("http://localhost:3000/tarifler");
 
   const changeHandler = (e) => {
     const { id, value } = e.target;
@@ -27,6 +29,7 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    fetchData("http://localhost:3000/tarifler", "POST", formData);
     setFormData(initialValue);
   };
 

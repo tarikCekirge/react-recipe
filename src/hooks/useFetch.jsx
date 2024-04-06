@@ -12,7 +12,7 @@ const useFetch = () => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error(response.statusText);
       }
       const result = await response.json();
       setData(result);

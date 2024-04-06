@@ -1,13 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { IoMdRemove } from "react-icons/io";
 import { IoAddOutline } from "react-icons/io5";
 import useFetch from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const initialValue = { baslik: "", aciklama: "", malzemeler: [""], hazirlanisi: "", resim: "", url: "" };
   const [formData, setFormData] = useState(initialValue);
   const addButtonRef = useRef();
   const { data, loading, error, fetchData } = useFetch("http://localhost:3000/tarifler");
+  const navigate = useNavigate();
 
   const changeHandler = (e) => {
     const { id, value } = e.target;
@@ -32,6 +34,12 @@ const Create = () => {
     fetchData("http://localhost:3000/tarifler", "POST", formData);
     setFormData(initialValue);
   };
+
+  useEffect(() => {
+    if (data) {
+      navigate("/");
+    }
+  }, [data, navigate]);
 
   const addNewMaterial = () => {
     setFormData((prevState) => ({
